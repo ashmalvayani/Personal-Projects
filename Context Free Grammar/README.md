@@ -1,3 +1,5 @@
+ABOUT THE PROJECT!
+
 1) INTRODUCTION:
 The project implements basic CFG (Context-Free Grammar), a formal grammar in which every production rule is formed. CFG's are used to describe the structure and formations of sentences, words, and phrases in natural language. They support the natural language of linguists and form the structure of programming language, but our project has been restricted to the natural language of linguistics. 
 
