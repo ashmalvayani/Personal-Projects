@@ -1,1 +1,6 @@
 
+The System Call for Producer-Consumer Problem with a Bounded Buffer is a classic Operating Systems Problem that we implemented in this project. This project was implemented in Linux Operating Systems (Ubuntu version) in Kernel Language and C language.
+
+DESCRIPTION:
+Processes communicate through various sources of communication- a buffer with a limited number of data slots is one of the majorly used sources of communication. The producer writes to one end of the buffer in the project, and the consumer reads from the other end. Using semaphores, various test cases have been taken care of, including prohibiting writing to a full buffer or reading from an empty buffer. The count is kept through wait() and signal() function calls.  A producer will write data, and a specific consumer will be reading the data off. The data written, read, and the producer and consumer numbers have been displayed in the program to ensure correct input and output.
+This output is displayed through the print() function in the system call made inside the program file. This system call has been made by making amendments to the makefile, creating a new C file for the system call. The system call is invoked by creating a new directory named “ProducerConsumer” and then creating a file inside the directory to run the c program file, which then calls the system call in it. 
