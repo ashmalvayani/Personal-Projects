@@ -1,0 +1,2 @@
+model_checkpoint_path: "BiGRU-BiLSTM_Weights"
+all_model_checkpoint_paths: "BiGRU-BiLSTM_Weights"

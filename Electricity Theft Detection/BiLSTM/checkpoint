@@ -1,0 +1,2 @@
+model_checkpoint_path: "BiLSTM_Weights"
+all_model_checkpoint_paths: "BiLSTM_Weights"
