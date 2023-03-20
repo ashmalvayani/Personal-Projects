@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Body -->
+<div class="container registerbox">
+    <div class="loginimg">
+        <img src="{{ url_for('static', filename = 'assets/img/rider.jpg')}}" alt="" class="rider">
+    </div>
+    <main class="form-signin">
+        <form action="/Rider" method="post" onsubmit="return Func()">
+            <img src="{{ url_for('static', filename = 'assets/img/logo.jpg')}}" alt="Cant find." class="login">
+            <h1 class="h3 mb-3 fw-normal">Register As a rider</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="Name">
+                <label for="floatingInput">Name</label>
+            </div>
+            <div class="form-floating">
+                <input type="tel" class="form-control" id="Contact" placeholder="Contact Number" name="Contact">
+                <label for="floatingPassword">Contact Number</label>
+            </div>
+            <div class="form-floating">
+                <input type="tel" class="form-control" id="Cnic" placeholder="Cnic Number" name="CNIC">
+                <label for="floatingPassword">Cnic Number</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="Bike_Registeration_Number" placeholder="Bike Registeration Number" name="BRN">
+                <label for="floatingPassword">Bike Registeration Number</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="Driving_License_Number" placeholder="Driving License Number" name="License">
+                <label for="floatingPassword">Driving License Number</label>
+            </div>
+
+            <div class="checkbox mb-3" id="terms_conditions">
+                <label>
+                    <input type="checkbox" value="remember-me"> I agree to the terms and conditions.
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-dark" type="submit">Apply</button>
+            <p class="mt-5 mb-3">You will be contacted by our team within 7-10 business days.</p>
+        </form>
+    </main>
+</div>
+
+    <script>
+        function Func(){
+            alert("Your response have been recorded, you'll be contacted in few days.")
+        }
+    </script>
+
+{% endblock %}

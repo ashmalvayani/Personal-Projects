@@ -1,0 +1,59 @@
+Restaurant,Rest_url,Category_id
+BELLA VITA,ITALIAN/RESTAURANTS/BELLA_VITA.jpg,1
+DELFRIO,ITALIAN/RESTAURANTS/DELFRIO.jpg,1
+THE HOT SPOT,ITALIAN/RESTAURANTS/HOTSPOT.jpg,1
+PIZZA HUT,ITALIAN/RESTAURANTS/PIZZAHUT.jpg,1
+GINSOY,CHINESE/RESTAURANTS/Ginsoy.jpg,2
+XIAN,CHINESE/RESTAURANTS/xian.jpg,2
+TAO,CHINESE/RESTAURANTS/tao.png,2
+BAM BOU,CHINESE/RESTAURANTS/bam-bou.png,2
+HARDEE'S,Fast Food/restaurants/hardee's.jpg,3
+KFC,Fast Food/restaurants/kfc.png,3
+BOVICHIC,Fast Food/restaurants/boviChic.png,3
+HOWDY,Fast Food/restaurants/howdy.jpg,3
+MONAL,bbq/restaurants/monal.jpg,4
+HAVELI KEBAB AND GRILL,bbq/restaurants/haveli.jpg,4
+BBQ TONIGHT,bbq/restaurants/bbq tonight.jpg,4
+NANDO'S ,bbq/restaurants/nando's.png,4
+DELIZIA,Desserts/Restaurant/delizia.jpg,6
+WAFFLES AND BEYOND,Desserts/Restaurant/WAFFLES AND BEYOD.jpg,6
+DUNKIN DONUTS,Desserts/Restaurant/DUNKIN DONUTS.jpg,6
+KABABJEES BAKERS,Desserts/Restaurant/kababjees bakers.jpg,6
+STUDIO 7 TEAS,Beverages/Restaurant/studio 7 teas.png,5
+HAPPY ICE CREAM,Beverages/Restaurant/happy ice cream.jpg,5
+AGHA JUICE,Beverages/Restaurant/agha juice.jpg,5
+MEHRAN ICE CREAM,Beverages/Restaurant/mehran ice cream.jpg,5
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,

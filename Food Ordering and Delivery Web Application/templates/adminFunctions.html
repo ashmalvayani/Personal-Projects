@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Body -->
+<div class="container adminfunctions">
+    <main class="form-signin">
+        <form>
+            <img src="{{url_for('static', filename = 'assets/img/logo.jpg')}}" alt="Cant find." class="login" style="margin-left: 20px ;">
+            <h1 class="h3 mb-3 fw-normal">Welcome, Admin!</h1>
+            <h1 class="heading_3">Admin Functions:</h1>
+            <ul style="list-style: none;">
+                <li>
+                    <a href="/Rider">
+                        <a href="/Rider" class="btn btn-secondary my-2" style="margin-left: 15px;">Register a new Rider.</a>
+                    </a>
+                </li>
+                <li>
+                    <a href="/RestaurantRegister">
+                        <a href="/RestaurantRegister" class="btn btn-secondary my-2" style="margin-left: -15px;">Register a new Restaurant</a>
+                    </a>
+                </li>
+                <li>
+                    <a href="/reviewmanagement">
+                        <a href="/reviewmanagement" class="btn btn-secondary my-2" style="margin-left: 30px;">Manage Ratings</a>
+                    </a>
+                </li>
+        </ul>
+        </form>
+    </main>
+</div>
+
+{% endblock %}

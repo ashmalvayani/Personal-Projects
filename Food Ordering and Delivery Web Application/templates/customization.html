@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Body -->
+<form action="/customization" method="post">
+    <div class="container billing">
+    <div class="col-md-5 col-lg-4 order-md-last table">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="carttext">Choose your customization</span>
+        </h4>
+        <ul class="list-group mb-3">
+            {% set var1= {'total': 0} %}
+            {% set var2= {'total': 3} %}
+            
+            {% for item in item_records%}
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+                <h6 class="my-0">{{item.food_name}}</h6>
+                <small class="text-muted">{{item.res_name}}</small>
+                <label for="membership" class="dropdown choose_customization">Choose an option:</label>
+                    <select name="customize" id="membership">
+                        <option value="0" class="options">None</option>
+                        {% for i in range (var1.total,var2.total)%}
+                            <option value="{{topping_id[i]}}" class="options">{{topping_name[i]}} - Rs.{{topping_price[i]}}</option>
+                        {% endfor %}
+                    </select>
+            </div>
+            </li>
+            {% if var1.update({'total': var1.total + 3}) %}{% endif %} 
+            {% if var2.update({'total': var2.total + 3}) %}{% endif %} 
+    
+            {% endfor %}
+        </ul>
+        </div>
+        <button type="submit" class="btn-success checkout_in_customization">Proceed to Checkout!</button>
+    </form>
+    
+</div>
+
+{% endblock %}

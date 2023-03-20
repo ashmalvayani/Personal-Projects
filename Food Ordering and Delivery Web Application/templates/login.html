@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+    <!-- Body -->
+
+    <body class="text-center">
+        <div class="container logincontainer">
+            <div class="loginimg">
+                <img src="{{url_for('static', filename = 'assets/img/login.jpg')}}" alt="Cant find.">
+            </div>
+            <main class="form-signin">
+                <form action="/login" method="post">
+                    <img src="{{url_for('static', filename = 'assets/img/logo.jpg')}}" alt="Cant find." class="login">
+                    <h1 class="h3 mb-3 fw-normal">Login</h1>
+
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" name="Email" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" name="Password" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <div class="checkbox mb-3" style="margin: 0rem  0rem 0rem -15rem;">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+                    <p class="mt-5 mb-3">Don't have an account?</p>
+                    <a href="/signup" class="login_to_signup">Register now for free!</a>
+                </form>
+            </main>
+        </div>
+    </body>
+
+   
+
+{% endblock %}  

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<body class="text-center">
+    <div class="container premiumcontainer">
+        <div class="signupimg">
+            <img src= "{{url_for('static', filename = 'assets/img/premium.jpg')}}" alt="Cant find." class="premiumimg">
+        </div>
+        <main class="form-signin">
+            <form action="/premium" method="post" onsubmit="return submitted()">
+                <img src="{{url_for('static', filename = 'assets/img/logo.jpg')}}" alt="Cant find." class="login">
+                <h1 class="h3 mb-3 fw-normal">Membership Form</h1>
+
+                <h1 class="premheading">Categories</h1>
+                <h3 class="premium_types">
+                    <ul>
+                        <li>10% for Pkr. 800</li>
+                        <li>20% for Pkr. 1500</li>
+                        <li>50% for Pkr. 2500</li>
+                    </ul>
+                </h3>
+                <label for="membership" class="dropdown premiumoptions">Choose an option:</label>
+                <select name="membership" id="membership">
+                    <option value="0">None</option>
+                    <option value="10">10%</option>
+                    <option value="20">20%</option>
+                    <option value="50">50%</option>
+                </select>
+                <h1 class="premheading my-4">Enter your details:</h1>
+                <div class="form-floating">
+                    <input type="name" class="form-control" id="floatingPassword" placeholder="Name" value="{{customer.cus_name}}" name="phone">
+                    <label for="floatingPassword">Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="phone" class="form-control" id="floatingPassword" placeholder="phone" value="{{customer.cus_phone}}" name="phone">
+                    <label for="floatingPassword">Contact Number</label>
+                </div>
+                <div class="form-floating">
+                    <input type="address" class="form-control" id="floatingPassword" placeholder="eg. 1234 street" name="address">
+                    <label for="floatingPassword">Address</label>
+                </div>
+                <br><br>
+                <h3 class="premium_types">PAYMENT METHOD : CASH ON DELIVERY</h3>
+                <button class="w-100 btn btn-lg btn-dark my-3" id="myBtn" type="submit">Apply now!</button>
+            </form>
+        </main>
+    </div>
+</body>
+
+<script>
+    function submitted(){
+        alert("Your Membership card will be delivered to your address within 7 working days.")
+    }
+</script>
+
+{% endblock %}  

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block body %}
+    <!-- Body -->
+
+<body class="text-center">
+    <div class="container signupcontainer">
+        <div class="signupimg">
+            <img src= "{{url_for('static', filename = 'assets/img/signup.jpg')}}" alt="Cant find.">
+        </div>
+        <main class="form-signin">
+            <form action="/signup" method="post">
+                <img src="{{url_for('static', filename = 'assets/img/logo.jpg')}}" alt="Cant find." class="login">
+                <h1 class="h3 mb-3 fw-normal">Sign-up</h1>
+
+                <div class="form-floating">
+                    <input type="name" class="form-control" id="floatingPassword" name="Name" placeholder="Name">
+                    <label for="floatingPassword">Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" name="Email" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" name="Password" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating">
+                    <input type="phone" class="form-control" id="floatingPassword" name="Contact" placeholder="phone">
+                    <label for="floatingPassword">Contact Number</label>
+                </div>
+                <p class="mt-5 mb-3 premium_in_signup">Subscribe to premium membership:</p>
+                
+                <label for="membership" class="dropdown">Choose an option:</label>
+                    <select name="membership" id="membership">
+                        <option value="0">Not interested</option>
+                        <option value="10">10%</option>
+                        <option value="20">20%</option>
+                        <option value="50">50%</option>
+                    </select>
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> I agree to the terms and conditions.
+                    </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-dark" type="submit">Register now!</button>
+            </form>
+        </main>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,3 @@
+review without login na hou
+admin functions are accessible without even logging in
+identify those features jo sirf login hone ke baad hi nazar aane chaiye eg order details, but order secure karne ki need nahi hai

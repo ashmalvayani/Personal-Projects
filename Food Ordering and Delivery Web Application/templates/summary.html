@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="gif">
+<div class="pan-loader">
+    <div class="loader"></div>
+    <div class="pan-container">
+        <div class="pan"></div>
+        <div class="handle"></div>
+    </div>
+    <div class="shadow"></div>
+    </div>
+</div>
+
+<div class="preparing">
+    <h1 class="preparing_food">Preparing your food</h1>
+</div>
+
+
+<div class="container details">
+    <div class="col-md-5 col-lg-4 order-md-last table">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="preparing_food">Order Summary</span> 
+        </h4>
+        <ul class="list-group mb-3">
+
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+                <h6 class="my-0">Order Number</h6>
+            </div>
+            <span class="text-muted">{{rec.order_id}}</span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+                <h6 class="my-0">Customer Name</h6>
+            </div>
+            <span class="text-muted">{{recor.cus_name}}</span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+                <h6 class="my-0">Address</h6>
+                <p>{{recor.address}}</p>
+            </div>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+                <h6 class="my-0">Payment method</h6>
+            </div>
+            <span class="text-muted">{{recor.payment_method}}</span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+                <h6 class="my-0">Contact Number</h6>
+            </div>
+            <span class="text-muted">{{recor.cus_phone}}</span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between">
+            <span>Total Amount</span>
+            <strong>Rs. {{rec.discounted_price}}</strong>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+                <h6 class="my-0">Delivery Charges</h6>
+            </div>
+            <strong>Rs. 100</strong>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Grand Total</span>
+                <strong>Rs. {{rec.discounted_price + 100}}</strong>
+            </li>
+
+        </ul>
+        </div>
+
+        {% if future == 'no' %}
+        <form action="/tracking" method="post">
+            <button class="btn-warning trackbtn" name="order_number" value="{{rec.order_id}}">Track your order.</button>
+        </form>
+        {% endif %}
+    </div>
+{% endblock %}  

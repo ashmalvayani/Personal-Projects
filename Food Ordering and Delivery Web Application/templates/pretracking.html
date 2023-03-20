@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Body -->
+<div class="bike">
+    <img src="{{url_for('static', filename = 'assets/img/bike.jpg')}}" alt="">
+</div>
+
+<div class="delivering">
+    <h1 class="preparing_food">Track your order</h1>
+</div>
+
+<div class="container container_tracking my-5">
+    <form action="/pretracking" method="post" onsubmit="return myFunction()">
+        <div class="col-md-5 col-lg-4 order-md-last table">
+            <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                    <div class="col-12">
+                        <label for="address" class="form-label">Enter Your Order Number</label>
+                        <input type="text" class="form-control" id="address" placeholder="eg. 16" required="" name="order_number">
+                        <div class="invalid-feedback">
+                          Please enter your shipping address.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button class="btn btn-warning btn-lg trackbtn" style="margin-top: 5px;">Track your order!</button>
+    </form>
+</div>
+
+<script>
+    function myFunction(){
+        var x = '{{text}}'
+        if (x  == 'can not track future order.'){
+            alert("can't track future order")
+            return false
+        }
+        return true
+    }
+</script>
+{% endblock %}

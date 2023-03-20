@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Body -->
+<div class="container review_container">
+    <img src="{{ url_for('static', filename = 'assets/img/review.jpg' )}}" alt="Image not found." class="review_img">
+
+    <form action="/review" method="post" onsubmit="return fun()">
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="Email" class="form-label">Email Address</label>
+                <input type="email" class="review_box" id="Email" placeholder="abc@xyz.com" name="email">
+                <div class="invalid-feedback">
+                    Valid Email is required.
+                </div>
+            </div>
+
+
+            <div class="col-12">
+                <label for="Order_id" class="form-label">Order Number</label>
+                <div class="input-group has-validation">
+                    <input type="text" class="review_box2" id="order_id" placeholder="Order Number" name="order_id">
+                    <div class="invalid-feedback">
+                        Your Order number is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-25">
+                <label for="rate">Rate your experience:</label>
+            </div>
+            <div class="col-75">
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="text">5 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="text">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="text">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="text">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="text">1 star</label>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <label for="feedback" class="form-label">How was your experience?</label>
+                <div class="input-group has-validation">
+                    <input type="text" class="order_review" id="feedback"
+                        placeholder="Add Additional comments.." name="review">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success reviewbtn">Submit</button>
+    </form>
+</div>
+<br><br><br>
+
+
+<script>
+    function fun(){
+        alert("Your response have been recorded!")
+    }
+</script>
+
+{% endblock %}

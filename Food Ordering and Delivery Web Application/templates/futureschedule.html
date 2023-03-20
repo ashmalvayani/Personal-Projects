@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Body -->
+<br><br><br><br><br><br>
+<form action="/futureschedule" method="post">
+    <div class="contact_us_container">
+        <h1 class="futureHeading" style="margin-left: 100px;">Future Scheduling</h1>
+        <img src= "{{url_for('static', filename = 'assets/img/over.png')}}"alt="Cant find image." class="menuimg" style="margin-left: 50px;">
+    </div>
+    <label for="start" class="dateselect">Select when you want the Delivery:</label>
+    <input type="date" id="start" name="trip-start" min="2021-12-21" max="2022-01-21">
+    <button type="submit" class="btn btn-secondary btn-lg futurebtn">Order now!</button>
+</form>
+<br><br><br><br><br><br>
+{% endblock %}

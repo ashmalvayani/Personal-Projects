@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container register_restaurant_box">
+    <div class="loginimg">
+        <img src="{{url_for('static', filename = 'assets/img/restaurant_registeration.png')}}" alt="" class="restaurant_reg">
+    </div>
+    <main class="form-signin">
+        <form action="/RestaurantRegister" method="post">
+            <img src="{{url_for('static', filename = 'assets/img/logo.jpg')}}" alt="Cant find." class="login">
+            <h1 class="h3 mb-3 fw-normal">Register As a Restaurant</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="name">
+                <label for="floatingInput">Restaurant Name</label>
+            </div>
+            <div class="form-floating">
+                <input type="tel" class="form-control" id="Contact" placeholder="Contact Number" name="contact">
+                <label for="floatingPassword">Contact Details</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control" id="Address" placeholder="Address" name="address">
+                <label for="floatingPassword">Address</label>
+            </div>
+
+            <label for="Category" class="dropdown choose_category" style="margin-left: 0.2rem;">Choose the category you offer:</label>
+            <select name="Category" id="Category">
+                {% for category in item%}
+                <option class="options" name="category" value = "{{category.category_id}}">{{category.category_name}}</option>
+                {% endfor %}
+            </select>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me" style="margin-left: 8rem;"> I agree to the terms and conditions.
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-dark" type="submit">Apply</button>
+            <p class="mt-5 mb-3">You will be contacted by our team within 7-10 business days for further verification, before registeration.</p>
+        </form>
+    </main>
+</div>
+
+{% endblock %}

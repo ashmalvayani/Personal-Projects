@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Body -->
+
+<div class="container logincontainer">
+    <div class="loginimg">
+        <img src= "{{url_for('static', filename = 'assets/img/admin.webp')}}" alt="Cant find." class="adminpic">
+    </div>
+    <main class="form-signin">
+        <form action="/adminLogin" method="post" onsubmit="return CheckLogin()" name="myForm">
+            <img src= "{{url_for('static', filename = 'assets/img/logo.jpg')}}" alt="Cant find." class="login">
+            <h1 class="h3 mb-3 fw-normal">Login As Admin</h1>
+
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label >
+                    <input type="checkbox" value="remember-me" style="margin-left: 130px;"> Remember me
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+        </form>
+    </main>
+</div>
+
+
+<script>
+    function CheckLogin(){
+        var x = myForm.email.value
+        var y = myForm.password.value
+        
+        if(x == 'admin@gmail.com' && y == 'admin'){
+            return true   
+        }
+        else{
+            alert('Incorrect Email or Password, please relogin')
+            return false
+        }
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Delicacies -->
+  <div class="delicacies">
+    <div class="container">
+      <img src="{{ url_for('static', filename = 'assets/img/delicacies.jpg')}}" alt="Image not found" class="delicacies_img">
+      <h1 class="deli_heading">FEATURED <br> DELICACIES</h1>
+      <p class="deli_para">TASTY AND CRUNCHY</p>
+      <img src="{{ url_for('static', filename = 'assets/img/over.png')}}" alt="" class="del_img">
+    </div>
+</div>
+
+ <!-- Menu options -->
+ <div class="menuclass" id="premenu">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="width: 70rem; height: 60rem;" >
+      {% for item in cat%}
+      <!-- row me padding left add krke cards ko center lejana hai -->
+      <div class="row g-0">
+        <div class="col g-3">
+          <div class="card shadow-sm">
+            {% set fname = 'assets/img/categories/' + item.image_url %}
+            <img src="{{ url_for('static', filename = fname)}}" alt="Image not found.">
+            <div class="card-body">
+              <h1 class="cardheading">{{item.category_name}}</h1>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-grid gap-2 col-2 mx-auto">
+                  <form action="/Restaurants" method="post">
+                    <button class="btn btn-light btn-outline-dark menubtn " name = "category" value="{{item.category_name}}">View</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}  

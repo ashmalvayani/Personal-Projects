@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<body>
+    <!-- Body -->
+    <div class="menuheadingdiv">
+        <h1 class="menuheading">{{cat_name.category_name}}</h1>
+        <img src="{{url_for('static', filename = 'assets/img/over.png')}}" alt="Cant find image." class="menuimg">
+    </div>
+    <div class="menuoption">
+        {% for item in menu_items %} 
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4 imghover">
+                    {% set fname = 'assets/img/' + item.image_url %}
+                    <img src="{{ url_for('static', filename = fname )}}" class="img-fluid rounded-start image" alt="Image not found.">
+                    <div class="middle">
+                        <form action="/cart" method="post">
+                            <button name= "food_id" value={{item.food_id}}>
+                                <img src="{{ url_for('static', filename = 'assets/img/cart4.svg')}}" alt="image not found." class="btn cart_on_hover">
+                            </button>
+                            <!-- <input type="image" name= "food_id" value={{item.food_name}} src ="{{ url_for('static', filename = 'assets/img/cart4.svg')}}" class="btn cart_on_hover"> -->
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.food_name}}</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Rs. {{item.food_price}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div> -->
+        <a href="/italian_restaurant">
+            <img src="{{ url_for('static', filename = 'assets/img/prev.png')}}" alt="" class="go_back">
+        </a>
+    </div>
+</body>
+{% endblock %}  

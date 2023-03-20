@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Food Delivery System</title>
+    <!-- {{ url_for('static',filename='Link aigi yahan') }} -->
+    <link rel="stylesheet" href= "{{url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand logotext" id="logoid" href="/">
+        <img src= "{{url_for('static', filename='assets/img/logo.jpg')}}" alt="" width="40" height="34" class="d-inline-block align-text-top">
+        Food Ordering
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav n_list">
+          <li class="nav-item">
+            <a class="nav-link active logotext" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link logotext" href="/order">Order Now</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link logotext" href="/pretracking">Track Your Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link logotext" href="/contactus">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="text-end">
+        {% if not session.loggedin %}
+        <a href="/login">
+          <button type="button" class="btn btn-outline-light me-2">Login</button>
+        </a>
+        <a href="/signup">
+        <button type="button" class="btn btn-warning">Sign-up</button>
+        </a>
+        {% else %}
+        <a href="/logout">
+        <button type="button" class="btn btn-secondary">Log-out</button>
+        </a>
+
+        <a href="/showcart">
+          <img src="{{url_for('static', filename='assets/img/cart4.svg')}}" alt="image not found." class="btn cart">
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  {% block body %} {% endblock %}
+
+  <!-- Footer -->
+  <div class="footer end">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-2">
+          <h5 class="footer_heading">Discover Restaurants</h5>
+          <ul class="nav flex-column">
+            <li><a href="#" class="footer_txt">Italian</a></li>
+            <li><a href="#" class="footer_txt">BBQ</a></li>
+            <li><a href="#" class="footer_txt">Chinese</a></li>
+          </ul>
+        </div>
+
+        <div class="col-2">
+          <h5 class="footer_heading">Discover Food</h5>
+          <ul class="nav flex-column">
+            <li><a href="#" class="footer_txt">Featured</a></li>
+            <li><a href="#" class="footer_txt">Most ordered</a></li>
+            <li><a href="#" class="footer_txt">Top rated</a></li>
+          </ul>
+        </div>
+
+        <div class="col-2">
+          <h5 class="footer_heading">Be a part of our team!</h5>
+          <ul class="nav flex-column">
+            <li><a href="/Rider" class="footer_txt">Register as a rider.</a></li>
+            <!-- <li class="nav-item mb-2 footer_txt"><a href="#" class="nav-link p-0 text-muted">Register as a restaurant.</a></li> -->
+            <li><a href="/RestaurantRegister" class="footer_txt">Register as a restaurant.</a></li>
+            <li><a href="/adminLogin" class="footer_txt">Register as an Admin.</a></li>
+            <li><a href="/review" class="footer_txt">Leave a review.</a></li>
+          </ul>
+        </div>
+
+        <div class="col-4 offset-1">
+          <form>
+            <h5 class="footer_heading">Looking for a vacancy?</h5>
+            <p style="color: white;">Drop down your email address, and we will reach you as soon as we find an opportunity for you.</p>
+            <div class="d-flex w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden footer_txt">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn btn-warning submitbtn" type="button">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+            <div class="d-flex justify-content-between py-4 my-4 border-top">
+                <p class="copyrightfooter">© 2021 Company, Inc. All rights reserved.</p>
+            </div>
+            <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-dark" href="{{ params['fb_url'] }}"><img src="{{url_for('static', filename='/assets/img/facebook.svg')}}" alt="" class="foot facebookbtn"></a></li>
+            <li class="ms-3"><a class="link-dark" href="{{ params['tw_url'] }}"><img src="{{url_for('static', filename='/assets/img/twitter.svg')}}" alt="" class="foot instagrambtn"></a></li>
+            <li class="ms-3"><a class="link-dark" href="{{ params['ig_url'] }}"><img src="{{url_for('static', filename='/assets/img/instagram.svg')}}" alt="" class="foot twitterbtn"></a></li>
+            </ul>
+        </footer>
+    </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+    </body>
+</html>
